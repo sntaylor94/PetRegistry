@@ -6,16 +6,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+
 @Entity
 @Table(name = "owner")
 public class Owner {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ownerId;
+	@NotBlank
 	private String firstName;
+	@NotBlank
 	private String lastName;
+	@NotBlank
 	private String phone;
+	@NotBlank
 	private String email;
+	@NotBlank
 	private String address;
 	
 	public int getOwnerId() {
